@@ -1,0 +1,18 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: reddit-gateway
+
+zuul:
+  routes:
+    containerized-users:
+      path: /user/**
+      serviceId: containerized-users
+    containerized-posts:
+      path: /post/**
+      serviceId: containerized-posts
+    containerized-comments:
+      path: /comment/**
+      serviceId: containerized-comments
